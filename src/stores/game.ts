@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { useThemeStore } from './theme'
 
 export type CellState = {
   revealed: boolean
@@ -215,7 +216,6 @@ export const useGameStore = defineStore('game', () => {
 
   // Check if the player has won
   function checkWinCondition() {
-    // Count unrevealed cells
     let unrevealedCount = 0
 
     for (let y = 0; y < rows.value; y++) {
@@ -226,7 +226,6 @@ export const useGameStore = defineStore('game', () => {
       }
     }
 
-    // If unrevealed cells equals total mines, player has won
     if (unrevealedCount === totalMines.value) {
       gameWon.value = true
       stopTimer()
@@ -240,6 +239,10 @@ export const useGameStore = defineStore('game', () => {
           }
         }
       }
+
+      // Trigger victory celebration
+      const themeStore = useThemeStore()
+      themeStore.celebrateVictory(elapsedTime.value, difficulty.value)
     }
   }
 

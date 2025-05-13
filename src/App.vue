@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import MsBoard from './components/game/MsBoard.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
+import VictoryCelebration from './components/VictoryCelebration.vue'
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import ThemeToggle from './components/ThemeToggle.vue'
     <main>
       <MsBoard />
     </main>
+    <VictoryCelebration />
   </div>
 </template>
