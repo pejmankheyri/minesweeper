@@ -11,13 +11,18 @@
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 2px solid var(--ms-board-border);
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease;
+  will-change: transform, opacity;
 }
 
 .ms-board {
   display: grid;
   gap: 1px;
   background-color: var(--ms-board-border);
+  transition: max-width 0.3s ease; /* Smooth width changes */
+  margin: 0 auto;
 }
 
 .ms-game-over {
@@ -26,4 +31,38 @@
 
 .ms-game-won {
   background-color: var(--ms-game-won-bg);
+}
+
+/* Add animation effect for cells appearing in new difficulty */
+@keyframes cell-appear {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ms-board .cell {
+  animation: cell-appear 0.2s ease-out;
+  animation-fill-mode: backwards;
+}
+
+/* Staggered animation for cells */
+.ms-board .cell:nth-child(1n) {
+  animation-delay: 0.03s;
+}
+.ms-board .cell:nth-child(2n) {
+  animation-delay: 0.06s;
+}
+.ms-board .cell:nth-child(3n) {
+  animation-delay: 0.09s;
+}
+.ms-board .cell:nth-child(4n) {
+  animation-delay: 0.12s;
+}
+.ms-board .cell:nth-child(5n) {
+  animation-delay: 0.15s;
 }
