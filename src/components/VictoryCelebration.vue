@@ -19,13 +19,17 @@ const difficultyLabel = computed(() => {
   return diff.charAt(0).toUpperCase() + diff.slice(1)
 })
 
-const achievement = computed(() => {
+type AchievementType = 'Legendary!' | 'New Record!' | 'On Fire!' | 'Congratulations!'
+
+const achievement = computed<AchievementType>(() => {
   const time = gameStore.elapsedTime
   if (gameStore.difficulty === 'expert' && time < 100) return 'Legendary!'
   if (time < themeStore.gameStats.bestTime) return 'New Record!'
   if (themeStore.gameStats.currentStreak > 3) return 'On Fire!'
   return 'Congratulations!'
 })
+
+const isSpecialAchievement = computed(() => achievement.value !== 'Congratulations!')
 </script>
 
 <template>
@@ -40,7 +44,7 @@ const achievement = computed(() => {
           <p class="streak">Win Streak: {{ themeStore.gameStats.currentStreak }}</p>
         </div>
 
-        <div class="medals" v-if="achievement !== 'Victory!'">
+        <div class="medals" v-if="isSpecialAchievement">
           <span class="medal">🏆</span>
         </div>
 
