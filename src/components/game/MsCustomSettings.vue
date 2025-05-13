@@ -141,17 +141,37 @@ function applyPreset(preset: string) {
           </div>
 
           <div class="board-preview">
-            <div
-              class="preview-grid"
-              :style="{
-                'grid-template-columns': `repeat(${Math.min(cols, 15)}, 6px)`,
-                'grid-template-rows': `repeat(${Math.min(rows, 15)}, 6px)`,
-              }"
-            >
-              <!-- Preview cells -->
-              <div v-for="i in Math.min(rows * cols, 15 * 15)" :key="i" class="preview-cell"></div>
+            <div class="preview-container">
+              <!-- Visual indicator for scaled preview -->
+              <div v-if="rows > 15 || cols > 15" class="preview-scale-indicator">
+                <div class="scale-box full"></div>
+                <div class="scale-arrow">→</div>
+                <div class="scale-box scaled"></div>
+              </div>
+
+              <div
+                class="preview-grid"
+                :style="{
+                  'grid-template-columns': `repeat(${Math.min(cols, 15)}, 6px)`,
+                  'grid-template-rows': `repeat(${Math.min(rows, 15)}, 6px)`,
+                  'aspect-ratio': `${cols} / ${rows}`,
+                }"
+              >
+                <!-- Preview cells -->
+                <div
+                  v-for="i in Math.min(rows, 15) * Math.min(cols, 15)"
+                  :key="i"
+                  class="preview-cell"
+                ></div>
+              </div>
             </div>
-            <div class="preview-text">{{ rows }}×{{ cols }} board with {{ mines }} mines</div>
+
+            <div class="preview-text">
+              {{ rows }}×{{ cols }} board with {{ mines }} mines
+              <span v-if="rows > 15 || cols > 15" class="preview-note">
+                (preview shows scaled representation)
+              </span>
+            </div>
           </div>
         </div>
 
