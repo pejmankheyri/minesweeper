@@ -55,7 +55,7 @@ watch(
   (newValue) => {
     if (newValue && msBoardRef.value) {
       gsap.to(msBoardRef.value, {
-        x: [-5, 5, -5, 5, -5, 5, 0] as gsap.TweenValue,
+        x: [-5, 5, -5, 5, -5, 5, 0] as unknown as gsap.TweenValue,
         duration: 0.4,
         ease: 'power2.inOut',
       })
