@@ -1,8 +1,11 @@
 @import './base.css';
-@import './ms/ms-board.css';
-@import './ms/ms-cell.css';
-@import './ms/ms-controls.css';
-@import './ms/ms-timer.css';
+@import './ms/board.css';
+@import './ms/cell.css';
+@import './ms/controls.css';
+@import './ms/timer.css';
+@import './ms/custom.css';
+@import './ms/toggle.css';
+@import './ms/celebration.css';
 
 #app {
   max-width: 1280px;

@@ -2,6 +2,7 @@
 import { useGameStore, type GameDifficulty } from '@/stores/game'
 import { ref, computed } from 'vue'
 import MsTimer from './MsTimer.vue'
+import MsCustomSettings from './MsCustomSettings.vue' // Import the new component
 
 const gameStore = useGameStore()
 const emit = defineEmits<{
@@ -9,9 +10,6 @@ const emit = defineEmits<{
 }>()
 
 const showCustomDialog = ref(false)
-const customRows = ref(gameStore.rows)
-const customCols = ref(gameStore.cols)
-const customMines = ref(gameStore.totalMines)
 
 const gameStatus = computed(() => {
   if (gameStore.gameWon) return '😎'
@@ -32,8 +30,8 @@ function changeDifficulty(difficulty: GameDifficulty) {
   }
 }
 
-function applyCustomSettings() {
-  gameStore.setCustomDifficulty(customRows.value, customCols.value, customMines.value)
+function applyCustomSettings(rows: number, cols: number, mines: number) {
+  gameStore.setCustomDifficulty(rows, cols, mines)
   showCustomDialog.value = false
 }
 </script>
@@ -68,37 +66,14 @@ function applyCustomSettings() {
       </button>
     </div>
 
-    <!-- Custom settings dialog -->
-    <div v-if="showCustomDialog" class="custom-dialog">
-      <div class="custom-dialog-content">
-        <h3>Custom Settings</h3>
-
-        <div class="custom-setting">
-          <label for="rows">Rows:</label>
-          <input id="rows" type="number" min="5" max="30" v-model.number="customRows" />
-        </div>
-
-        <div class="custom-setting">
-          <label for="cols">Columns:</label>
-          <input id="cols" type="number" min="5" max="30" v-model.number="customCols" />
-        </div>
-
-        <div class="custom-setting">
-          <label for="mines">Mines:</label>
-          <input
-            id="mines"
-            type="number"
-            min="1"
-            :max="customRows * customCols - 1"
-            v-model.number="customMines"
-          />
-        </div>
-
-        <div class="dialog-actions">
-          <button @click="applyCustomSettings" class="apply-button">Apply</button>
-          <button @click="showCustomDialog = false" class="cancel-button">Cancel</button>
-        </div>
-      </div>
-    </div>
+    <!-- Use the new custom settings component -->
+    <MsCustomSettings
+      :show="showCustomDialog"
+      :initialRows="gameStore.rows"
+      :initialCols="gameStore.cols"
+      :initialMines="gameStore.totalMines"
+      @close="showCustomDialog = false"
+      @apply="applyCustomSettings"
+    />
   </div>
 </template>
