@@ -1,0 +1,11 @@
+.timer {
+  background-color: black;
+  color: red;
+  font-family: 'Digital', monospace;
+  font-size: 1.5rem;
+  padding: 4px 8px;
+  border-radius: 2px;
+  min-width: 60px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}

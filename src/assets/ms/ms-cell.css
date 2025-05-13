@@ -1,0 +1,64 @@
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #c6c6c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  user-select: none;
+  border: 2px outset #ececec;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  transition: all 0.1s ease;
+}
+
+.cell:hover:not(.revealed) {
+  background-color: #d8d8d8;
+}
+
+.cell.revealed {
+  border: 1px solid #7b7b7b;
+  background-color: #e0e0e0;
+  border-style: solid;
+}
+
+.cell.revealed:not(.mine):hover {
+  filter: brightness(1.1);
+}
+
+.cell.revealed[class*='value-']:hover {
+  cursor: pointer;
+  background-color: #d0d0d0;
+  position: relative;
+}
+
+.cell.mine {
+  background-color: #ff8787;
+}
+
+.cell.value-1 {
+  color: blue;
+}
+.cell.value-2 {
+  color: green;
+}
+.cell.value-3 {
+  color: red;
+}
+.cell.value-4 {
+  color: darkblue;
+}
+.cell.value-5 {
+  color: brown;
+}
+.cell.value-6 {
+  color: teal;
+}
+.cell.value-7 {
+  color: black;
+}
+.cell.value-8 {
+  color: gray;
+}

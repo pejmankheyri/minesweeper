@@ -1,0 +1,120 @@
+.game-controls {
+  width: 100%;
+  max-width: 500px;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bdbdbd;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px solid #7b7b7b;
+  margin-bottom: 10px;
+}
+
+.mine-counter,
+.timer {
+  background-color: black;
+  color: red;
+  font-family: 'Digital', monospace;
+  font-size: 1.5rem;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.reset-button {
+  font-size: 1.8rem;
+  background-color: #c6c6c6;
+  border: 2px outset #ececec;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.reset-button:active {
+  border-style: inset;
+}
+
+.difficulty-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.difficulty-button {
+  flex: 1;
+  padding: 8px;
+  background-color: #c6c6c6;
+  border: 2px outset #ececec;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background-color 0.2s;
+}
+
+.difficulty-button:hover {
+  background-color: #d8d8d8;
+}
+
+.difficulty-button.active {
+  background-color: #a0a0a0;
+  border-style: inset;
+}
+
+.custom-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.custom-dialog-content {
+  background-color: #c6c6c6;
+  padding: 20px;
+  border-radius: 4px;
+  border: 2px solid #7b7b7b;
+  width: 300px;
+}
+
+.custom-setting {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.custom-setting input {
+  width: 80px;
+  padding: 4px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.apply-button,
+.cancel-button {
+  padding: 8px 16px;
+  border: 2px outset #ececec;
+  border-radius: 4px;
+  background-color: #c6c6c6;
+  cursor: pointer;
+}
+
+.apply-button:hover,
+.cancel-button:hover {
+  background-color: #d8d8d8;
+}
