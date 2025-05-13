@@ -6,24 +6,24 @@
 }
 
 .ms-board-container {
-  background: #bdbdbd;
+  background: var(--ms-board-bg);
   padding: 12px;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid #7b7b7b;
+  border: 2px solid var(--ms-board-border);
   transition: transform 0.2s ease;
 }
 
 .ms-board {
   display: grid;
   gap: 1px;
-  background-color: #7b7b7b;
+  background-color: var(--ms-board-border);
 }
 
 .ms-game-over {
-  background-color: #ffb8b8;
+  background-color: var(--ms-game-over-bg);
 }
 
 .ms-game-won {
-  background-color: #c8ffb8;
+  background-color: var(--ms-game-won-bg);
 }

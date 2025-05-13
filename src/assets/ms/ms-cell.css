@@ -1,13 +1,13 @@
 .cell {
   width: 30px;
   height: 30px;
-  background-color: #c6c6c6;
+  background-color: var(--ms-cell-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   user-select: none;
-  border: 2px outset #ececec;
+  border: 2px outset var(--ms-cell-border);
   cursor: pointer;
   font-family: 'Arial', sans-serif;
   font-size: 16px;
@@ -15,12 +15,12 @@
 }
 
 .cell:hover:not(.revealed) {
-  background-color: #d8d8d8;
+  background-color: var(--ms-cell-bg-hover);
 }
 
 .cell.revealed {
-  border: 1px solid #7b7b7b;
-  background-color: #e0e0e0;
+  border: 1px solid var(--ms-cell-revealed-border);
+  background-color: var(--ms-cell-revealed-bg);
   border-style: solid;
 }
 
@@ -30,35 +30,35 @@
 
 .cell.revealed[class*='value-']:hover {
   cursor: pointer;
-  background-color: #d0d0d0;
+  background-color: var(--ms-cell-revealed-hover);
   position: relative;
 }
 
 .cell.mine {
-  background-color: #ff8787;
+  background-color: var(--ms-mine-bg);
 }
 
 .cell.value-1 {
-  color: blue;
+  color: var(--ms-cell-value-1);
 }
 .cell.value-2 {
-  color: green;
+  color: var(--ms-cell-value-2);
 }
 .cell.value-3 {
-  color: red;
+  color: var(--ms-cell-value-3);
 }
 .cell.value-4 {
-  color: darkblue;
+  color: var(--ms-cell-value-4);
 }
 .cell.value-5 {
-  color: brown;
+  color: var(--ms-cell-value-5);
 }
 .cell.value-6 {
-  color: teal;
+  color: var(--ms-cell-value-6);
 }
 .cell.value-7 {
-  color: black;
+  color: var(--ms-cell-value-7);
 }
 .cell.value-8 {
-  color: gray;
+  color: var(--ms-cell-value-8);
 }

@@ -19,6 +19,33 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  /* Minesweeper Game Variables - Light Theme */
+  --ms-cell-bg: #c6c6c6;
+  --ms-cell-bg-hover: #d8d8d8;
+  --ms-cell-revealed-bg: #e0e0e0;
+  --ms-cell-revealed-hover: #d0d0d0;
+  --ms-cell-border: #ececec;
+  --ms-cell-revealed-border: #7b7b7b;
+  --ms-mine-bg: #ff8787;
+  --ms-board-bg: #bdbdbd;
+  --ms-board-border: #7b7b7b;
+  --ms-game-over-bg: #ffb8b8;
+  --ms-game-won-bg: #c8ffb8;
+  --ms-button-active: #a0a0a0;
+  --ms-counter-bg: #000000;
+  --ms-counter-text: #ff0000;
+  --ms-dialog-bg: rgba(0, 0, 0, 0.5);
+
+  /* Cell number colors */
+  --ms-cell-value-1: blue;
+  --ms-cell-value-2: green;
+  --ms-cell-value-3: red;
+  --ms-cell-value-4: darkblue;
+  --ms-cell-value-5: brown;
+  --ms-cell-value-6: teal;
+  --ms-cell-value-7: black;
+  --ms-cell-value-8: gray;
 }
 
 /* semantic color variables for this project */
@@ -34,6 +61,44 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+}
+
+.dark-mode {
+  /* Override Vue variables */
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+
+  /* Game variables - Dark Theme */
+  --ms-cell-bg: #424242;
+  --ms-cell-bg-hover: #525252;
+  --ms-cell-revealed-bg: #333333;
+  --ms-cell-revealed-hover: #3a3a3a;
+  --ms-cell-border: #5c5c5c;
+  --ms-cell-revealed-border: #666666;
+  --ms-mine-bg: #d64545;
+  --ms-board-bg: #303030;
+  --ms-board-border: #555555;
+  --ms-game-over-bg: #8c3a3a;
+  --ms-game-won-bg: #3a6c3a;
+  --ms-button-active: #505050;
+  --ms-counter-bg: #141414;
+  --ms-counter-text: #ff6b6b;
+  --ms-dialog-bg: rgba(0, 0, 0, 0.7);
+
+  /* Cell number colors for dark mode */
+  --ms-cell-value-1: #6ebdff;
+  --ms-cell-value-2: #98e28a;
+  --ms-cell-value-3: #ff9898;
+  --ms-cell-value-4: #8eb8ff;
+  --ms-cell-value-5: #d9a66c;
+  --ms-cell-value-6: #79dad9;
+  --ms-cell-value-7: #dfdfdf;
+  --ms-cell-value-8: #b3b3b3;
 }
 
 @media (prefers-color-scheme: dark) {
