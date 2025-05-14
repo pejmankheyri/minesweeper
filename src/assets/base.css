@@ -1,5 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
+  /* Light theme base colors */
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
@@ -20,32 +21,32 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
-  /* Minesweeper Game Variables - Light Theme */
-  --ms-cell-bg: #c6c6c6;
-  --ms-cell-bg-hover: #d8d8d8;
-  --ms-cell-revealed-bg: #e0e0e0;
-  --ms-cell-revealed-hover: #d0d0d0;
-  --ms-cell-border: #ececec;
-  --ms-cell-revealed-border: #7b7b7b;
-  --ms-mine-bg: #ff8787;
-  --ms-board-bg: #bdbdbd;
-  --ms-board-border: #7b7b7b;
-  --ms-game-over-bg: #ffb8b8;
-  --ms-game-won-bg: #c8ffb8;
-  --ms-button-active: #a0a0a0;
-  --ms-counter-bg: #000000;
-  --ms-counter-text: #ff0000;
-  --ms-dialog-bg: rgba(0, 0, 0, 0.5);
+  /* Softer, eye-friendly light theme */
+  --ms-cell-bg: #e0e5eb;
+  --ms-cell-bg-hover: #d0d8e2;
+  --ms-cell-revealed-bg: #f2f5f8;
+  --ms-cell-revealed-hover: #e8eef5;
+  --ms-cell-border: #c8d0d9;
+  --ms-cell-revealed-border: #b0bac3;
+  --ms-mine-bg: #f8d7da;
+  --ms-board-bg: #d4dbe3;
+  --ms-board-border: #b0bac3;
+  --ms-game-over-bg: #f5c6cb;
+  --ms-game-won-bg: #d4edda;
+  --ms-button-active: #c8d0d9;
+  --ms-counter-bg: #2c3e50;
+  --ms-counter-text: #f2f5f8;
+  --ms-dialog-bg: rgba(44, 62, 80, 0.4);
 
-  /* Cell number colors */
-  --ms-cell-value-1: blue;
-  --ms-cell-value-2: green;
-  --ms-cell-value-3: red;
-  --ms-cell-value-4: darkblue;
-  --ms-cell-value-5: brown;
-  --ms-cell-value-6: teal;
-  --ms-cell-value-7: black;
-  --ms-cell-value-8: gray;
+  /* Softer number colors that are still colorblind friendly */
+  --ms-cell-value-1: #3a6ea5; /* Softer blue */
+  --ms-cell-value-2: #3e8d63; /* Softer green */
+  --ms-cell-value-3: #c75450; /* Softer red */
+  --ms-cell-value-4: #7952b3; /* Softer purple */
+  --ms-cell-value-5: #996633; /* Softer brown */
+  --ms-cell-value-6: #1e7b85; /* Softer teal */
+  --ms-cell-value-7: #5a5a5a; /* Dark gray instead of black */
+  --ms-cell-value-8: #777777; /* Medium gray */
 }
 
 /* semantic color variables for this project */
@@ -65,54 +66,42 @@
 
 .dark-mode {
   /* Override Vue variables */
-  --color-background: var(--vt-c-black);
-  --color-background-soft: var(--vt-c-black-soft);
-  --color-background-mute: var(--vt-c-black-mute);
-  --color-border: var(--vt-c-divider-dark-2);
-  --color-border-hover: var(--vt-c-divider-dark-1);
-  --color-heading: var(--vt-c-text-dark-1);
-  --color-text: var(--vt-c-text-dark-2);
+  --color-background: #1a1d20; /* Darker, less harsh background */
+  --color-background-soft: #25282c;
+  --color-background-mute: #2d3035;
+  --color-border: #495057;
+  --color-border-hover: #6c757d;
+  --color-heading: #f8f9fa;
+  --color-text: #e9ecef;
 
-  /* Game variables - Dark Theme */
-  --ms-cell-bg: #424242;
-  --ms-cell-bg-hover: #525252;
-  --ms-cell-revealed-bg: #333333;
-  --ms-cell-revealed-hover: #3a3a3a;
-  --ms-cell-border: #5c5c5c;
-  --ms-cell-revealed-border: #666666;
-  --ms-mine-bg: #d64545;
-  --ms-board-bg: #303030;
-  --ms-board-border: #555555;
-  --ms-game-over-bg: #8c3a3a;
-  --ms-game-won-bg: #3a6c3a;
-  --ms-button-active: #505050;
-  --ms-counter-bg: #141414;
-  --ms-counter-text: #ff6b6b;
-  --ms-dialog-bg: rgba(0, 0, 0, 0.7);
+  /* Warm, reduced blue-light dark theme */
+  --ms-cell-bg: #3a3e44;
+  --ms-cell-bg-hover: #474c53;
+  --ms-cell-revealed-bg: #2b2e32;
+  --ms-cell-revealed-hover: #343a40;
+  --ms-cell-border: #495057;
+  --ms-cell-revealed-border: #495057;
+  --ms-mine-bg: #a45252;
+  --ms-board-bg: #292c31;
+  --ms-board-border: #495057;
+  --ms-game-over-bg: #73343a;
+  --ms-game-won-bg: #345e46;
+  --ms-button-active: #454b52;
+  --ms-counter-bg: #212529;
+  --ms-counter-text: #e9ecef;
+  --ms-dialog-bg: rgba(33, 37, 41, 0.8);
 
-  /* Cell number colors for dark mode */
-  --ms-cell-value-1: #6ebdff;
-  --ms-cell-value-2: #98e28a;
-  --ms-cell-value-3: #ff9898;
-  --ms-cell-value-4: #8eb8ff;
-  --ms-cell-value-5: #d9a66c;
-  --ms-cell-value-6: #79dad9;
-  --ms-cell-value-7: #dfdfdf;
-  --ms-cell-value-8: #b3b3b3;
-}
+  --app-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  /* Warm-toned, distinct number colors for dark mode */
+  --ms-cell-value-1: #90caf9; /* Lighter blue */
+  --ms-cell-value-2: #a5d6a7; /* Lighter green */
+  --ms-cell-value-3: #ffab91; /* Peach instead of harsh red */
+  --ms-cell-value-4: #ce93d8; /* Lavender purple */
+  --ms-cell-value-5: #ffe082; /* Amber yellow instead of brown */
+  --ms-cell-value-6: #80deea; /* Cyan */
+  --ms-cell-value-7: #e0e0e0; /* Light gray */
+  --ms-cell-value-8: #b0bec5; /* Blue-gray */
 }
 
 *,
@@ -149,7 +138,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
 }
