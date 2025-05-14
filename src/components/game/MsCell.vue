@@ -59,7 +59,7 @@ const handleTouchStartAction = () => {
   longPressTimer = setTimeout(() => {
     emit('flag')
     longPressTimer = null
-  }, 500)
+  }, 300)
 }
 
 const handleTouchEndAction = (e: TouchEvent) => {
